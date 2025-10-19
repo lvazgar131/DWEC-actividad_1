@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1>Ejercicio 4 JS: Arrays</h1>
+    <p>4.1. Crea un programa que solicite al usuario ingresar una lista de números y luego
+    encuentre el número más grande en esa lista.</p>
+    <p id="ejercicio4_1"></p>
+
+    <script>
+
+        function numero_mas_grande(numeros) {
+            let numero_grande = numeros[0]; 
+
+            for (let i = 1; i < numeros.length; i++) {
+                if (numeros[i] > numero_grande) {
+                numero_grande = numeros[i];
+                }
+            }
+            return numero_grande;
+        }
+
+        let cantidad = parseInt(prompt("Ingresa la cantidad de números:"));
+        let numeros = [];
+
+        for (let i = 0; i < cantidad; i++) {
+            let numero = parseFloat(prompt(`Ingresa el número ${i + 1}:`));
+            numeros.push(numero);
+        }
+
+        let mayor = numero_mas_grande(numeros);
+        document.getElementById("ejercicio4_1").innerHTML ="El número más grades de los que has dicho es " + mayor
+    </script>
+</body>
+</html>
